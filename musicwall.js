@@ -11,8 +11,8 @@ const TRACKS = [
 		albumCoverUrl: null
 	},
 	{
-		embedUrl: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jinsangbeats/realization%3Fsi%3D5fa989d42b7841f79fb06a266ea7b592%26utm_source%3Dclipboard%26utm_medium%3Dtext%26utm_campaign=social_sharing&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-		trackUrl: "https://soundcloud.com/jinsangbeats/realization?si=5fa989d42b7841f79fb06a266ea7b592&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+		embedUrl: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jinsangbeats/cleaning-day%3Fsi%3D04b4e3bba8f14e43a6653a09c5695b65%26utm_source%3Dclipboard%26utm_medium%3Dtext%26utm_campaign=social_sharing&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+		trackUrl: "https://soundcloud.com/jinsangbeats/cleaning-day?si=04b4e3bba8f14e43a6653a09c5695b65&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
 		albumCoverUrl: null
 	},
 	{
