@@ -1,0 +1,124 @@
+/* Bluebox for empty slots */
+.emptybox {
+	background: #b3cfff !important;
+	border: 2px dashed #7bb0e7;
+	cursor: default !important;
+	box-shadow: none !important;
+	background-image: none !important;
+}
+/* musicwall.css - migrated from lofiwall.css */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #cca3ff;
+	font-family: 'Arial', sans-serif;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+#tribute-title {
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #1e40af;
+	font-family: Arial, sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	z-index: 10000;
+	text-align: center;
+	margin: 0;
+}
+
+.random-button {
+	position: fixed;
+	top: 68px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #1e40af;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+	cursor: pointer;
+	z-index: 10000;
+	transition: all 0.3s ease;
+}
+
+.random-button:hover {
+	background: #0062ff;
+	transform: translateX(-50%);
+}
+
+.random-button:active {
+	transform: translateX(-50%);
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-top: 126px;
+	overflow: visible;
+}
+
+.square-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 100px);
+	grid-template-rows: repeat(4, 100px);
+	gap: 0;
+	overflow: visible;
+}
+
+.square {
+	cursor: pointer;
+	transition: transform 0.15s ease;
+	border: none;
+	position: relative;
+	overflow: hidden;
+	/* Optimize image rendering for speed */
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+}
+
+.square.loading {
+	background-color: #bfdbfe;
+	border: 2px solid #3b82f6;
+}
+
+/* Hover effects only for devices that can actually hover (not touch devices) */
+@media (hover: hover) and (pointer: fine) {
+	.square:hover {
+		transform: scale(1.1);
+		z-index: 10;
+	}
+}
+
+.square.clicked {
+	transform: scale(1.1);
+	z-index: 10;
+}
+
+.square.pressed {
+	transform: scale(1.0);
+	z-index: 10;
+}
+
+/* Mobile positioning for SoundCloud player - handled in JavaScript */
