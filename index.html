@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Wall</title>
     <link rel="stylesheet" href="musicwall.css">
 </head>
 <body>
-    <h1 id="tribute-title">Music Wall</h1>
-    
-    <!-- Random Song Button -->
-    <button id="randomBtn" class="random-button">Random Song</button>
-    
-    <div class="container">
-        <div class="square-grid" id="squareGrid">
-            <!-- Squares will be dynamically generated -->
-        </div>
+    <div id="wall-title">Music Wall</div>
+    <button id="random-btn">Random Song</button>
+    <div id="music-grid">
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
+        <div class="music-square"></div>
     </div>
     
+    <div id="soundcloud-player" style="visibility: hidden;">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/petecurry/sonic-in-the-holobeach&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
     <script src="musicwall.js"></script>
 </body>
 </html>

@@ -1,124 +1,94 @@
-/* Bluebox for empty slots */
-.emptybox {
-	background: #b3cfff !important;
-	border: 2px dashed #7bb0e7;
-	cursor: default !important;
-	box-shadow: none !important;
-	background-image: none !important;
-}
-/* musicwall.css - migrated from lofiwall.css */
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 body {
-	background: #cca3ff;
-	font-family: 'Arial', sans-serif;
-	height: 100vh;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(217, 184, 255);
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px;
+    color: rgb(0, 41, 192);
 }
 
-#tribute-title {
-	position: fixed;
-	top: 20px;
-	left: 50%;
-	transform: translateX(-50%);
-	color: #1e40af;
-	font-family: Arial, sans-serif;
-	font-size: 28px;
-	font-weight: bold;
-	z-index: 10000;
-	text-align: center;
-	margin: 0;
+button {
+    background-color: rgb(0, 41, 192);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
 }
 
-.random-button {
-	position: fixed;
-	top: 68px;
-	left: 50%;
-	transform: translateX(-50%);
-	background: #1e40af;
-	color: white;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 20px;
-	font-size: 14px;
-	font-weight: bold;
-	font-family: Arial, sans-serif;
-	cursor: pointer;
-	z-index: 10000;
-	transition: all 0.3s ease;
+#music-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 0;
+    width: 400px;
+    margin: 10px auto;
 }
 
-.random-button:hover {
-	background: #0062ff;
-	transform: translateX(-50%);
+.music-square {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.random-button:active {
-	transform: translateX(-50%);
+/* Desktop hover effects */
+button:hover {
+    background-color: rgb(38, 114, 255);
 }
 
-.container {
-	width: 100%;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	padding-top: 126px;
-	overflow: visible;
+.music-square:hover {
+    transform: scale(1.06);
+    background-color: rgb(200, 200, 200);
 }
 
-.square-grid {
-	display: grid;
-	grid-template-columns: repeat(4, 100px);
-	grid-template-rows: repeat(4, 100px);
-	gap: 0;
-	overflow: visible;
+/* Disable hover effects on non-hover devices */
+@media (hover: none) {
+    button:hover {
+        background-color: rgb(0, 41, 192); /* Reset to original color */
+    }
+    
+    .music-square:hover {
+        transform: none;
+        background-color: white; /* Reset to original color */
+    }
+    
+    .music-square:active {
+        transform: scale(1.06);
+    }
 }
 
-.square {
-	cursor: pointer;
-	transition: transform 0.15s ease;
-	border: none;
-	position: relative;
-	overflow: hidden;
-	/* Optimize image rendering for speed */
-	image-rendering: -webkit-optimize-contrast;
-	image-rendering: crisp-edges;
-	backface-visibility: hidden;
-	transform: translateZ(0);
+/* Desktop click animation */
+@media (hover: hover) {
+    .music-square:active {
+        transform: scale(1.0);
+    }
 }
 
-.square.loading {
-	background-color: #bfdbfe;
-	border: 2px solid #3b82f6;
+#soundcloud-player iframe {
+    width: 400px;
+    margin: 10px auto;
+    border-radius: 10px;
 }
 
-/* Hover effects only for devices that can actually hover (not touch devices) */
-@media (hover: hover) and (pointer: fine) {
-	.square:hover {
-		transform: scale(1.1);
-		z-index: 10;
-	}
+/* Smaller grid and player on touch devices with small screens */
+@media (hover: none) and (max-width: 500px) {
+    #music-grid {
+        grid-template-columns: repeat(4, 80px);
+        width: 320px;
+    }
+    
+    .music-square {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #soundcloud-player iframe {
+        width: 320px;
+    }
 }
-
-.square.clicked {
-	transform: scale(1.1);
-	z-index: 10;
-}
-
-.square.pressed {
-	transform: scale(1.0);
-	z-index: 10;
-}
-
-/* Mobile positioning for SoundCloud player - handled in JavaScript */
