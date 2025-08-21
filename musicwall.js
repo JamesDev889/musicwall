@@ -33,6 +33,7 @@ for (let i = shuffledTracks.length - 1; i > 0; i--) {
     [shuffledTracks[i], shuffledTracks[j]] = [shuffledTracks[j], shuffledTracks[i]];
 }
 
+// Load album covers for all squares
 for (let i = 0; i < squares.length; i++) {
     fetch(`https://soundcloud.com/oembed?format=json&url=${encodeURIComponent(shuffledTracks[i])}`)
         .then(response => response.json())
@@ -53,12 +54,14 @@ document.getElementById('random-btn').addEventListener('click', () => {
     
     // Find which square contains this track and animate it
     const trackIndex = shuffledTracks.indexOf(randomTrack);
-    // Trigger the hover animation (scale 1.06)
-    squares[trackIndex].style.transform = 'scale(1.06)';
-    // Remove inline transform after animation so hover works again
+    
+    // Add CSS animation class
+    squares[trackIndex].classList.add('pulse-animation');
+    
+    // Remove the class after animation completes
     setTimeout(() => {
-        squares[trackIndex].style.transform = '';
-    }, 160);
+        squares[trackIndex].classList.remove('pulse-animation');
+    }, 300);
     
     playSong(randomTrack);
 });
