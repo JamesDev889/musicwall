@@ -22,7 +22,7 @@ const tracks = [
 
 // Function to play a song
 function playSong(trackUrl) {
-    document.querySelector('#soundcloud-player iframe').src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(trackUrl)}&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true`;
+    document.querySelector('#soundcloud-player iframe').src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(trackUrl)}&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&buying=false&sharing=false&download=false&show_artwork=true&show_playcount=false&show_teaser=false&in_app=false`;
     document.getElementById('soundcloud-player').style.visibility = 'visible';
 }
 
