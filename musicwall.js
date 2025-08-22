@@ -1,5 +1,8 @@
 // Musicwall js
 
+// Detect if user is on mobile
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 const squares = document.querySelectorAll('.music-square');
 const tracks = [
     'https://soundcloud.com/allahlas/raspberry-jam',
@@ -22,8 +25,20 @@ const tracks = [
 
 // Function to play a song
 function playSong(trackUrl) {
-    document.querySelector('#soundcloud-player iframe').src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(trackUrl)}&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true`;
+    // Base URL with common parameters for both desktop and mobile
+    const playerUrl = `https://w.soundcloud.com/player/?url=${encodeURIComponent(trackUrl)}&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true&buying=false&sharing=false&download=false&show_artwork=true&show_playcount=false&show_teaser=false&in_app=false`;
+    
+    const iframe = document.querySelector('#soundcloud-player iframe');
+    iframe.src = playerUrl;
     document.getElementById('soundcloud-player').style.visibility = 'visible';
+    
+    // Mobile-specific autoplay handling
+    if (isMobile) {
+        // Wait for iframe to be fully ready, then make one attempt
+        setTimeout(() => {
+                iframe.contentWindow.postMessage('{"method":"play"}', '*');
+        }, 2000); // Wait 2 seconds for iframe to be fully ready
+    }
 }
 
 // Fill all squares with album covers in random order (Fisher-Yates shuffle)
