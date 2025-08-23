@@ -13,7 +13,7 @@ const tracks = [
     'https://soundcloud.com/jinsangbeats/far-away',
     'https://soundcloud.com/retroronin/jinsang-night-breeze',
     'https://soundcloud.com/michael-timi-ade/jinsang-morning',
-    'https://soundcloud.com/user-185332303/jinsang-egyptian-pools',
+    'https://soundcloud.com/neo-443294445/jinsang-blue-haze',
     'https://soundcloud.com/user-662598674/blank-banshee-1-b-start-up',
     'https://soundcloud.com/electronicvisions/tales-of-forgotten-biomes',
     'https://soundcloud.com/russliquid/the-russ-liquid-test-pleurant-de-joine',
